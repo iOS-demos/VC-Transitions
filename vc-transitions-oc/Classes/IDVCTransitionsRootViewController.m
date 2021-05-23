@@ -18,6 +18,10 @@
 
 @property (nonatomic, strong) NSArray *items;
 
+@property (nonatomic, strong) IDFullScreenForPresentedAnimator *presentedAnimator;
+
+@property (nonatomic, strong) IDFullScreenForDismissedAnimator *dismissedAnimator;
+
 @end
 
 @implementation IDVCTransitionsRootViewController
@@ -32,8 +36,12 @@
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.items.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[self.items[section] objectForKey:@"tips"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -42,16 +50,22 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    IDVCTransitionModel *tsModel = self.items[indexPath.row];
+    IDVCTransitionModel *tsModel = [self.items[indexPath.section] objectForKey:@"tips"][indexPath.row];
     cell.textLabel.text = tsModel.title;
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [self.items[section] objectForKey:@"title"];
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UIViewController *vc = [[[self.items[indexPath.row] targetVcClass] alloc] init];
+    IDVCTransitionModel *tsModel = [self.items[indexPath.section] objectForKey:@"tips"][indexPath.row];
+
+    UIViewController *vc = [[tsModel.targetVcClass alloc] init];
     vc.transitioningDelegate = self;
     vc.modalPresentationStyle = UIModalPresentationCustom;
     [self presentViewController:vc animated:YES completion:nil];
@@ -59,11 +73,11 @@
 
 #pragma mark - UIViewControllerTransitioningDelegate
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    return [[IDFullScreenForPresentedAnimator alloc] init];
+    return self.presentedAnimator;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    return [[IDFullScreenForDismissedAnimator alloc] init];
+    return self.dismissedAnimator;
 }
 
 #pragma mark - Getter
@@ -79,15 +93,40 @@
 - (NSArray *)items {
     if (!_items) {
         _items = @[
-            ({
-                IDVCTransitionModel *model = [[IDVCTransitionModel alloc] init];
-                model.title = @"模拟最新系统 present 转场";
-                model.targetVcClass = [IDSystemPresentationViewController class];
-                model;
-            })
+            @{
+                @"title": @"Modal 转场示例集合",
+                @"tips": @[
+                    ({
+                        IDVCTransitionModel *model = [[IDVCTransitionModel alloc] init];
+                        model.title = @"模拟最新系统 present 转场";
+                        model.targetVcClass = [IDSystemPresentationViewController class];
+                        model;
+                    })
+                ]
+            },
+            @{
+                @"title": @"Push 转场示例集合"
+            },
+            @{
+                @"title": @"TabBarController 转场示例集合"
+            }
         ];
     }
     return _items;
+}
+
+- (IDFullScreenForPresentedAnimator *)presentedAnimator {
+    if (!_presentedAnimator) {
+        _presentedAnimator = [[IDFullScreenForPresentedAnimator alloc] init];
+    }
+    return _presentedAnimator;
+}
+
+- (IDFullScreenForDismissedAnimator *)dismissedAnimator {
+    if (!_dismissedAnimator) {
+        _dismissedAnimator = [[IDFullScreenForDismissedAnimator alloc] init];
+    }
+    return _dismissedAnimator;
 }
 
 @end

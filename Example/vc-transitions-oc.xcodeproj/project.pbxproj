@@ -19,7 +19,6 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		695816F42D4711C48FDE86C7 /* libPods-vc-transitions-oc_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 055C4C260E62EAE13E85DEB9 /* libPods-vc-transitions-oc_Example.a */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		9FC46F7904371D2EE15719D2 /* libPods-vc-transitions-oc_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7C85203EC79E84D5FAE5C2 /* libPods-vc-transitions-oc_Tests.a */; };
 /* End PBXBuildFile section */
@@ -72,7 +71,6 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				695816F42D4711C48FDE86C7 /* libPods-vc-transitions-oc_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

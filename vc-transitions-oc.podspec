@@ -32,9 +32,9 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'vc-transitions-oc/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'vc-transitions-oc' => ['vc-transitions-oc/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'vc-transitions-oc' => ['vc-transitions-oc/Assets/*.xcassets']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

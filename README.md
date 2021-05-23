@@ -4,9 +4,9 @@ iOS控制器转场示例，收集、整理、实现市面上App的控制器转�
 ### 转场类别
 * Modal转场
 
-  | 模拟最新系统 present 转场                                    |      |      |
-  | ------------------------------------------------------------ | ---- | ---- |
-  | <img src="./DemoImages/Modal/modal1.gif" alt="modal1" style="zoom:50%;" /> |      |      |
+  | 模拟最新系统 present 转场                                    | 模拟 京东商品详情页 转场                                     |      |
+  | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
+  | <img src="./DemoImages/Modal/modal1.gif" alt="modal1" style="zoom:50%;" /> | <img src="./DemoImages/Modal/modal-jd-product-detail.gif" alt="modal-jd-product-detail" style="zoom:50%;" /> |      |
 
   
 

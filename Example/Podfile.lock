@@ -323,8 +323,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   QMUIKit: 1063a99f90aedd6e2dd65026ce0df46e6785e67b
-  vc-transitions-oc: b45e5b7df6d73f2f0f2a69da6e9b4e4b1b96f447
+  vc-transitions-oc: c249c9533e0a10a8a4700ab90ba0f6b4aeaa24de
 
 PODFILE CHECKSUM: c7f71a00b8f4dffead9b7406ac88fadb9f0059fc
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

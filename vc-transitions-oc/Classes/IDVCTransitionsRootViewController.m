@@ -6,11 +6,7 @@
 //
 
 #import "IDVCTransitionsRootViewController.h"
-#import "IDVCTransitionModel.h"
-#import "IDFullScreenAnimator.h"
-
-// 下列为所有转场demo vc
-#import "IDSystemPresentationViewController.h"
+#import "IDVCTransitionsHeader.h"
 
 @interface IDVCTransitionsRootViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate>
 
@@ -100,6 +96,12 @@
                         IDVCTransitionModel *model = [[IDVCTransitionModel alloc] init];
                         model.title = @"模拟最新系统 present 转场";
                         model.targetVcClass = [IDSystemPresentationViewController class];
+                        model;
+                    }),
+                    ({
+                        IDVCTransitionModel *model = [[IDVCTransitionModel alloc] init];
+                        model.title = @"模拟 京东商品详情页 转场";
+                        model.targetVcClass = [IDJDProductDetailViewController class];
                         model;
                     })
                 ]

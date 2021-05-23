@@ -1,0 +1,15 @@
+source 'https://cdn.cocoapods.org/'
+
+# use_frameworks!
+
+platform :ios, '9.0'
+
+target 'vc-transitions-oc_Example' do
+  pod 'vc-transitions-oc', :path => '../'
+
+  target 'vc-transitions-oc_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

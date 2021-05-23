@@ -1,5 +1,5 @@
 # VC-Transitions
-iOS控制器转场示例，收集、整理、实现市面上App的控制器转场样例，帮助你实现转场业务需求时提供一点思路~
+iOS控制器转场示例，收集、整理、实现市面上App的控制器转场示例，帮助你实现转场业务需求时提供一点思路~
 
 ### 转场类别
 * Modal转场
@@ -61,3 +61,7 @@ iOS控制器转场示例，收集、整理、实现市面上App的控制器转�
 11. https://github.com/hayyyyyyden/ViewControllerTransitionsDemo/tree/master/issue5-demo1（Fixed）
 12. https://github.com/objcio/issue-12-custom-container-transitions
 13. https://github.com/RickiG/view-controller-containment
+
+## 写在文末
+
+欢迎提交PR，实现更多有趣的控制器转场示例~
